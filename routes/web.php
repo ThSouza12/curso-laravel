@@ -5,21 +5,26 @@ Route::get('/login', function () {
 })->name('login');
 
 
-Route::middleware([])->group(function () {
+// Route::middleware([])->group(function () {
     
-    Route::prefix('admin')->group(function () {
+//     Route::prefix('admin')->group(function () {
         
-        Route::get('/dashboard', 'AdminTesteController@teste');
+//         Route::get('/dashboard', 'AdminTesteController@teste');
     
-        Route::get('/financeiro', 'AdminTesteController@teste');
+//         Route::get('/financeiro', 'AdminTesteController@teste');
     
-        Route::get('/produtos','AdminTesteController@teste' );
+//         Route::get('/produtos','AdminTesteController@teste' );
 
-        Route::get('/','AdminTesteController@teste' );
-    });
+//         Route::get('/','AdminTesteController@teste' );
+//     });
+// });
+
+Route::group([
+    'middleware'=> [],
+    'prefix' => 'admin',
+], function () {
+
 });
-
-
 
 
 Route::get('redirect3', function () {
